@@ -19,30 +19,90 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:SUBASH R
+RegisterNumber: 23003821
+'''
+def linearSearch(array,n,k):
+    for i in range(n):
+        if array [i]==k:
+            return i
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input()) 
+n=len(array)
+print(array)
+result =linearSearch(array,n,k)
+if result==-1:
+     print("Element not found")
+else:
+    print("Element found at index: ",result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:SUBASH R
+RegisterNumber: 23003821
+'''
+def binarySearchIter(array, k, low, high):
+   while low<=high:
+       mid=low+(high-low)//2
+       if array[mid]==k:
+          return mid
+       elif array[mid]<k:
+           low=mid+1
+       else:
+           high=mid-1
+   return -1
+    
+array = eval(input())
+array.sort()
+k = eval(input()) 
+print(array)
+result=binarySearchIter(array,k,0,len(array)-1)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by: SUBASH R
+RegisterNumber: 23003821
+'''
+def BinarySearch(arr, k, low, high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+           return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k = eval(input())
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result ==-1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)
 ```
 ## Sample Input and Output
 
+![image](https://github.com/rsubash17/Search-Algorithm/assets/147139828/9c6c2f0b-b596-4bde-a98c-686881443c54)
 
+![image](https://github.com/rsubash17/Search-Algorithm/assets/147139828/a9c1a6c7-f645-4871-9d17-e1e0df734ee9)
 
+![image](https://github.com/rsubash17/Search-Algorithm/assets/147139828/db9e5ec9-e2b3-4111-b8aa-33fc74b06d18)
 
 
 
